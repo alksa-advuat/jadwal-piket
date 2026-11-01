@@ -1,0 +1,293 @@
+/* ===== Pengaturan umum ===== */
+html, body {
+    overscroll-behavior: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f2fe;
+    color: #1e293b;
+    margin: 0;
+    padding: 0;
+}
+
+/* Elemen yang diberi atribut hidden harus benar-benar hilang */
+[hidden] {
+    display: none !important;
+}
+
+/* ===== Kepala halaman ===== */
+header {
+    background-color: #0284c7;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    margin: 0 0 8px 0;
+    font-size: 32px;
+}
+
+header p {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* ===== Isi halaman ===== */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    color: #0284c7;
+    margin-top: 0;
+    border-bottom: 2px solid #bae6fd;
+    padding-bottom: 8px;
+}
+
+h3 {
+    color: #0369a1;
+    margin-bottom: 8px;
+}
+
+.petunjuk {
+    color: #64748b;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+.info-hari {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* ===== Tabel ===== */
+.kotak-tabel {
+    overflow-x: auto;   /* tabel bisa digeser di HP */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+    background-color: #0284c7;
+    color: white;
+    padding: 12px;
+    border: 1px solid #0369a1;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #bae6fd;
+}
+
+tr:nth-child(even) td {
+    background-color: #f0f9ff;
+}
+
+/* Kolom hari yang sedang piket diberi warna kuning */
+td.hari-aktif {
+    background-color: #fef3c7 !important;
+    font-weight: bold;
+}
+
+/* ===== Form ===== */
+label {
+    cursor: pointer;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0 14px 0;
+    border: 1px solid #7dd3fc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    vertical-align: middle;
+    accent-color: #0284c7;
+    cursor: pointer;
+}
+
+input:checked + label {
+    color: #059669;
+    text-decoration: line-through;
+}
+
+.daftar-tugas {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.daftar-tugas li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #bae6fd;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 6px 0 12px 0;
+    font-size: 14px;
+}
+
+#previewFoto {
+    max-width: 100%;
+    max-height: 260px;
+    border-radius: 10px;
+    border: 2px solid #bae6fd;
+    margin-bottom: 10px;
+}
+
+/* ===== Tombol ===== */
+button {
+    background-color: #0284c7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0369a1;
+}
+
+.tombol-merah {
+    background-color: #dc2626;
+    margin-top: 0;
+}
+
+.tombol-merah:hover {
+    background-color: #b91c1c;
+}
+
+/* ===== Kotak pesan ===== */
+.peringatan {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 2px solid #f87171;
+    border-radius: 10px;
+    padding: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.sukses {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 2px solid #4ade80;
+    border-radius: 10px;
+    padding: 14px;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.pesan-error {
+    color: #b91c1c;
+    font-weight: bold;
+}
+
+/* ===== Status kelompok ===== */
+.progress {
+    background-color: #e2e8f0;
+    border-radius: 999px;
+    height: 16px;
+    overflow: hidden;
+}
+
+.progress-isi {
+    background-color: #22c55e;
+    height: 100%;
+    width: 0%;
+}
+
+.daftar-status {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.daftar-status li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #bae6fd;
+}
+
+.daftar-status li.selesai {
+    color: #166534;
+}
+
+.daftar-status small {
+    color: #64748b;
+}
+
+/* ===== Galeri foto ===== */
+.galeri {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.galeri figure {
+    width: 200px;
+    margin: 0;
+    border: 1px solid #bae6fd;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f0f9ff;
+}
+
+.galeri img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.galeri figcaption {
+    padding: 8px;
+    font-size: 14px;
+}
+
+.galeri small {
+    color: #64748b;
+}
+
+/* ===== Daftar aturan ===== */
+ol {
+    line-height: 1.8;
+    padding-left: 25px;
+}
+
+/* ===== Kaki halaman ===== */
+footer {
+    background-color: #0369a1;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}

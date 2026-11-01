@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bagian ini dibaca Google supaya halaman bisa dicari -->
+    <meta name="description" content="Jadwal piket kelas 10A Senin sampai Jumat. Siswa melapor tugas piket dengan checklist dan foto bukti, kelompok yang lengkap mendapat poin.">
+    <meta name="keywords" content="jadwal piket, jadwal piket kelas 10A, lapor piket, checklist piket, poin piket">
+    <meta name="author" content="Kelas 10A">
+
+    <title>Jadwal Piket Kelas 10A</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Jadwal Piket Kelas 10A</h1>
+    </header>
+
+    <main>
+
+        <!-- ===== Info hari ini ===== -->
+        <section>
+            <h2>Hari Ini</h2>
+            <p class="info-hari">
+                Piket hari: <strong id="teksHari">-</strong><br>
+                Tanggal: <span id="teksTanggal">-</span>
+            </p>
+        </section>
+
+        <!-- ===== Tabel jadwal (ditulis langsung di HTML) ===== -->
+        <section>
+            <h2>Jadwal Petugas Piket</h2>
+
+            <div class="kotak-tabel">
+                <table id="tabelJadwal">
+                    <thead>
+                        <tr>
+                            <th>Senin</th>
+                            <th>Selasa</th>
+                            <th>Rabu</th>
+                            <th>Kamis</th>
+                            <th>Jumat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Kesia</td><td>Tiara</td><td>Rindu</td><td>Meisya</td><td>Yerika</td></tr>
+                        <tr><td>Diva</td><td>Fathimah</td><td>Reina</td><td>Salsa</td><td>Melody</td></tr>
+                        <tr><td>Suci</td><td>Aura</td><td>Salwah</td><td>Sri</td><td>Gita</td></tr>
+                        <tr><td>Snya</td><td>Alni</td><td>Ismi</td><td>Madina</td><td>Jessica</td></tr>
+                        <tr><td>Haidar</td><td>Dzakwar</td><td>Marcello</td><td>Risang</td><td>Yosafat</td></tr>
+                        <tr><td>Regl</td><td>Affan</td><td>Rendy</td><td>Fabian</td><td>Marcello E</td></tr>
+                        <tr><td>Arvino</td><td>Reza</td><td>Daffa</td><td>Alif</td><td>Oswald</td></tr>
+                        <tr><td>Iman</td><td></td><td></td><td></td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ===== Form lapor piket ===== -->
+        <section>
+            <h2>Lapor Piket</h2>
+            <p class="petunjuk">Pilih namamu, centang tugas yang kamu kerjakan, lalu upload foto buktinya.</p>
+
+            <label for="pilihNama">Nama kamu:</label>
+            <select id="pilihNama">
+                <option value="">-- pilih nama --</option>
+            </select>
+
+            <!-- Peringatan kalau bukan jadwal piketnya -->
+            <div class="peringatan" id="peringatan" hidden></div>
+
+            <!-- Pesan kalau siswa sudah pernah lapor hari ini -->
+            <div class="sukses" id="sudahLapor" hidden></div>
+
+            <!-- Form yang hanya muncul untuk siswa yang piket hari ini -->
+            <form id="formLapor" hidden>
+                <h3>Tugas yang kamu kerjakan</h3>
+                <ul class="daftar-tugas" id="daftarTugas">
+                    <!-- diisi oleh script.js -->
+                </ul>
+
+                <h3>Foto bukti piket</h3>
+                <input type="file" id="inputFoto" accept="image/*">
+                <img id="previewFoto" alt="Pratinjau foto bukti piket" hidden>
+
+                <p class="pesan-error" id="pesanForm" hidden></p>
+
+                <button type="submit">Kirim laporan piket</button>
+            </form>
+        </section>
+
+        <!-- ===== Status kelompok hari ini ===== -->
+        <section>
+            <h2>Status Kelompok Hari Ini</h2>
+            <p id="teksProgress">-</p>
+            <div class="progress">
+                <div class="progress-isi" id="isiProgress"></div>
+            </div>
+
+            <p class="petunjuk" id="infoBonus"></p>
+
+            <div class="sukses" id="pesanPoin" hidden></div>
+
+            <ul class="daftar-status" id="daftarStatus">
+                <!-- diisi oleh script.js -->
+            </ul>
+        </section>
+
+        <!-- ===== Bukti foto ===== -->
+        <section>
+            <h2>Bukti Piket Hari Ini</h2>
+            <div class="galeri" id="galeri">
+                <!-- diisi oleh script.js -->
+            </div>
+        </section>
+
+        <!-- ===== Poin ===== -->
+        <section>
+            <h2>Poin Kelompok</h2>
+            <p class="petunjuk" id="aturanPoin"></p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kelompok</th>
+                        <th>Poin</th>
+                    </tr>
+                </thead>
+                <tbody id="isiPoin">
+                    <!-- diisi oleh script.js -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ===== Aturan ===== -->
+        <section>
+            <h2>Aturan Piket</h2>
+            <ol>
+                <li>Siswa hanya boleh melapor di hari piket yang telah ditentukan.</li>
+                <li>Setiap siswa wajib mencentang tugas yang ia kerjakan dan mengupload foto sebagai bukti.</li>
+                <li>Setiap siswa yang melapor menambah poin kelompoknya, dan ada bonus kalau sebagian besar anggota sudah melapor.</li>
+                <li>Kalau tidak bisa piket, harus tukar dengan teman.</li>
+            </ol>
+        </section>
+
+        <!-- ===== Khusus guru ===== -->
+        <section>
+            <h2>Khusus Guru</h2>
+            <p class="petunjuk">Masukkan PIN guru untuk menghapus data.</p>
+            <button type="button" id="btnReset" class="tombol-merah">Hapus semua data</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>@Tugas Pemograman Dahlia</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
