@@ -8,6 +8,19 @@
     <meta name="description" content="Jadwal piket kelas 10A Senin sampai Jumat. Siswa melapor tugas piket dengan checklist dan foto bukti, kelompok yang lengkap mendapat poin.">
     <meta name="keywords" content="jadwal piket, jadwal piket kelas 10A, lapor piket, checklist piket, poin piket">
     <meta name="author" content="Kelas 10A">
+    <meta name="robots" content="index, follow">
+
+    <!-- Alamat resmi halaman ini (supaya Google tidak bingung kalau ada alamat ganda) -->
+    <link rel="canonical" href="https://jadwalpiket10a.vercel.app/">
+
+    <!-- Tampilan saat link dibagikan di WhatsApp, dll -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:title" content="Jadwal Piket Kelas 10A">
+    <meta property="og:description" content="Jadwal piket kelas 10A Senin sampai Jumat, lengkap dengan lapor tugas dan poin kelompok.">
+    <meta property="og:url" content="https://jadwalpiket10a.vercel.app/">
+
+    <!-- Nanti, tempel kode verifikasi dari Google Search Console di bawah baris ini -->
 
     <title>Jadwal Piket Kelas 10A</title>
 
@@ -140,8 +153,8 @@
         <section>
             <h2>Aturan Piket</h2>
             <ol>
-                <li>Siswa hanya boleh melapor di hari piket yang telah ditentukan.</li>
-                <li>Setiap siswa wajib mencentang tugas yang ia kerjakan dan mengupload foto sebagai bukti.</li>
+                <li>Siswa hanya boleh melapor di hari piketnya sendiri.</li>
+                <li>Setiap siswa wajib mencentang tugas yang ia kerjakan dan mengupload foto bukti.</li>
                 <li>Setiap siswa yang melapor menambah poin kelompoknya, dan ada bonus kalau sebagian besar anggota sudah melapor.</li>
                 <li>Kalau tidak bisa piket, harus tukar dengan teman.</li>
             </ol>
@@ -150,14 +163,14 @@
         <!-- ===== Khusus guru ===== -->
         <section>
             <h2>Khusus Guru</h2>
-            <p class="petunjuk">Masukkan PIN guru untuk menghapus data.</p>
+            <p class="petunjuk">Akses untuk menghapus semua laporan, foto, dan poin. Perlu PIN.</p>
             <button type="button" id="btnReset" class="tombol-merah">Hapus semua data</button>
         </section>
 
     </main>
 
     <footer>
-        <p>@Tugas Pemograman Dahlia</p>
+        <p>@Dahlia</p>
     </footer>
 
     <script src="script.js"></script>
